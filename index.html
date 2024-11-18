@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Nova Metálica é uma empresa referência na fabricação de perfis para construção em Steel Frame, oferecendo soluções inovadoras e de alta qualidade para projetos eficientes e sustentáveis.">
+    <meta name="keywords" content="Nova Metálica, Construção Civil, Drywall, SteelFrame, Fast Drywall, Auraucária Perfis, Ananda Perfis, VL Perfil, Perfil Lider, Multi Perfil">
+
+    <link rel="icon" href="assets/avatar.ico">
+
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/variable.css">
+
+    <link rel="stylesheet" href="styles/section/home.css">
+    <link rel="stylesheet" href="styles/section/steelframe.css">
+    <link rel="stylesheet" href="styles/section/drywall.css">
+    <link rel="stylesheet" href="styles/section/qualidades.css">
+    <link rel="stylesheet" href="styles/section/diferencas.css">
+    <link rel="stylesheet" href="styles/section/cta.css">
+    <link rel="stylesheet" href="styles/section/numeros.css">
+    <link rel="stylesheet" href="styles/section/footer.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <title>Nova Metálica | Soluções Construtivas</title>
+
+</head>
+<body>
+
+    <video autoplay muted loop class="background-video">
+        <source src="/assets/video-perfis.mp4" type="video/mp4" />
+        Seu navegador não suporta o vídeo de fundo.
+    </video>
+
+    <div class="background-video-acima"></div>
+
+    <section class="home" id="home">    
+        <div class="home-left">
+
+            <div>
+                <img src="assets/logo-white-nova.svg" alt="logo da nova metálica">
+                <button>Quero comprar perfis de qualidade</button>
+            </div>
+
+            <h1>Colocar uma Copy <b class="b">Super Chamativa</b></h1>
+            <h4>Compre direto da Fábrica</h4>
+
+            <script>
+                const specificBold = document.querySelector("b");
+                const texts = ["Incrível", "Irresistível", "Impressionante"];
+                let index = 0;
+                let currentText = '';
+                let isDeleting = false;
+                let charIndex = 0;
+            
+                function typeEffect() {
+                  if (!isDeleting && charIndex < texts[index].length) {
+                    currentText += texts[index].charAt(charIndex);
+                    charIndex++;
+                  } else if (isDeleting && charIndex > 0) {
+                    currentText = currentText.slice(0, -1);
+                    charIndex--;
+                  }
+            
+                  specificBold.textContent = currentText;
+            
+                  if (!isDeleting && charIndex === texts[index].length) {
+                    setTimeout(() => isDeleting = true, 1000); // Pausa antes de apagar
+                  } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    index = (index + 1) % texts.length; // Passa para o próximo texto
+                  }
+            
+                  const speed = isDeleting ? 100 : 150; // Velocidade de apagar e digitar
+                  setTimeout(typeEffect, speed);
+                }
+            
+                typeEffect(); // Inicia o efeito
+              </script>
+
+            <form id="contactForm">
+                <div>
+                    <input type="text" id="name" placeholder="Nome da sua Empresa">
+                    <input type="tel" id="tel" placeholder="Whatsapp">
+                </div>
+                <input type="email" id="email" placeholder="Seu e-mail">
+                <div>
+                    <input type="text" id="cidade" placeholder="Cidade">
+                    <input type="text" id="estado" placeholder="Estado">
+                </div>
+                <select>
+                    <option>Qual sua área de atuação?</option>
+                    <option>Construtura</option>
+                    <option>Arquitetura</option>
+                    <option>Engenharia</option>
+                    <option>Logista</option>
+                    <option>Reformas</option>
+                    <option>Outros</option>
+                </select>
+                <button type="submit" id="buttonSubmit">Enviar</button>
+
+                <p>*Suas informações são seguras e usadas apenas para responder à sua solicitação. Garantimos total confidencialidade.</p>
+            </form>
+
+
+        </div>
+
+        <div class="background-home"></div>
+
+        <div class="home-right">
+            <button>Comprar este perfil</button>
+            <img src="assets/perfis-home.png" alt="imagens de perfis da nova metálica">
+        </div>
+    </section>
+
+    <section class="steelframe" id="steelframe">
+        <div class="steelframe-galery swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Card 1</div>
+                <div class="swiper-slide">Card 2</div>
+                <div class="swiper-slide">Card 3</div>
+                <div class="swiper-slide">Card 4</div>
+                <div class="swiper-slide">Card 5</div>
+                <div class="swiper-slide">Card 6</div>
+                <div class="swiper-slide">Card 7</div>
+            </div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="steelframe-text">
+            <h1>Falar sobre <b>Steel Frame</b></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
+    
+            <article>
+                <h2>Compre direto da fábrica</h2>
+                <img src="assets/logo-black-nova.png" alt="logo da nova metálica">
+            </article>
+    
+            <div>   
+                <div class="steelframe-products">Guia ( 90, 140 )</div>
+                <div class="steelframe-products">Montante ( 90, 140 )</div>
+                <div class="steelframe-products">Cartola ( 0,80 - 0,95 )</div>
+                <div class="steelframe-products">Treliça pronta</div>
+            </div>
+    
+            <button>Solicitar um orçamento!</button>
+        </div>
+    </section>
+    
+    <section class="drywall" id="drywall">
+
+        <div class="drywall-text">
+            <h1>Falar sobre <b>Drywall</b></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
+    
+            <article>
+                <h2>Compre direto da fábrica</h2>
+                <img src="assets/logo-black-nova.png" alt="logo da nova metálica">
+            </article>
+    
+            <div>   
+                <div class="drywall-products">Guia ( 48 - 70 - 90 )</div>
+                <div class="drywall-products">Montante ( 48 - 70 - 90 )</div>
+                <div class="drywall-products">Perfil F530</div>
+                <div class="drywall-products">Tabicas</div>
+                <div class="drywall-products">Cantoneiras</div>
+            </div>
+    
+            <button>Solicitar um orçamento!</button>
+        </div>
+
+        <div class="drywall-galery swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Card 1</div>
+                <div class="swiper-slide">Card 2</div>
+                <div class="swiper-slide">Card 3</div>
+                <div class="swiper-slide">Card 4</div>
+                <div class="swiper-slide">Card 5</div>
+                <div class="swiper-slide">Card 6</div>
+                <div class="swiper-slide">Card 7</div>
+            </div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <script>
+            const swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1, 
+                spaceBetween: 0, 
+                loop: true, 
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        </script>
+    </section>
+
+    <section class="diferencas" id="diferencas">
+
+        <div class="OU">ou</div>
+
+        <div class="diferencas-stick">
+            <h1>Perfis Stick</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum cupiditate doloremque, aut harum sunt alias reprehenderit sequi obcaecati recusandae consequatur quaerat cum expedita. Quisquam aliquid autem iusto veritatis illo.</p>
+            <button class="stick-btn">Quero comprar esse perfil</button>
+            <div>
+                Foto de perfil stick
+            </div>
+            <button>Fazer meu orçamento agora!</button>
+        </div>
+        <div class="diferencas-engenheirado">
+            <h1>Perfis Engenheirados</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptas cum facere dolore animi accusamus pariatur veritatis nostrum tempore eaque ut, minima veniam iure qui placeat! Eligendi, ducimus. Iure, deserunt!</p>
+            <div>
+                Foto de perfil engenheirado
+            </div>
+            <button>Fazer meu orçamento agora!</button>
+        </div>
+    </section>
+
+    <section class="qualidades" id="qualidades">
+        <div class="qualidades-cards">
+            <div class="qualidades-card">
+                <div class="qualidades-card-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="qualidades-card-text">
+                    <h2>Titulo</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eligendi sed fugit excepturi non exercitationem sit rem officiis dicta quasi.</p>
+                    <button>Solicitar orçamento</button>
+                </div>
+            </div>
+
+            <div class="qualidades-card">
+                <div class="qualidades-card-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="qualidades-card-text">
+                    <h2>Titulo</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eligendi sed fugit excepturi non exercitationem sit rem officiis dicta quasi.</p>
+                    <button>Solicitar orçamento</button>
+                </div>
+            </div>
+
+            <div class="qualidades-card">
+                <div class="qualidades-card-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="qualidades-card-text">
+                    <h2>Titulo</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eligendi sed fugit excepturi non exercitationem sit rem officiis dicta quasi.</p>
+                    <button>Solicitar orçamento</button>
+                </div>
+            </div>
+
+            <div class="qualidades-card">
+                <div class="qualidades-card-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="qualidades-card-text">
+                    <h2>Titulo</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eligendi sed fugit excepturi non exercitationem sit rem officiis dicta quasi.</p>
+                    <button>Solicitar orçamento</button>
+                </div>
+            </div>
+        </div>
+
+          <script>
+            VanillaTilt.init(document.querySelectorAll(".qualidades-card"), {
+		    max: 25,
+		    speed: 400
+	        });
+          </script>
+
+        <div class="qualidades-video">
+            <div class="qualidades-video-text">
+                <h2>Como são fábricados nossos perfis</h2>
+                <p>A F325iT é uma máquina de última geração, equipada com um rolo calibrador automático, um avançado sistema hidráulico de fluxo variável e ferramentas adicionais de perfuração. Essa combinação permite ajustar com precisão os perfis de aço, otimizar o desempenho da máquina e oferecer flexibilidade na criação de cortes personalizados. Como resultado, o F325iT se destaca como a solução mais eficiente e versátil da FRAMECAD para fabricação de estruturas em Steel Frame.</p>
+                <button>Solicitar orçamento</button>
+            </div>
+            <div class="qualidades-video-container">
+                <iframe title="Video Player" src="https://www.youtube.com/embed/KVCquOX5toQ" width="100%" height="100%" frameborder="0" border="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="numeros" id="numeros">
+        <div class="numeros-container">
+            <div class="numeros-card">
+                <h4>Perfis vendidos</h4>
+                <span value="240224">0</span>
+            </div>
+            <div class="numeros-card">
+                <h4>Montantes vendidos</h4>
+                <span value="190320">0</span>
+            </div>
+            <div class="numeros-card">
+                <h4>Estados atendidos</h4>
+                <span value="26">0</span>
+            </div>
+            <div class="numeros-card">
+                <h4>Pioneira desde</h4>
+                <span value="2000">0</span>
+            </div>
+        </div>
+
+        <script>
+            function animateCountUp(element, targetValue, duration) {
+                let startValue = 0;
+                let increment = targetValue / (duration / 50); 
+    
+                function updateCounter() {
+                    startValue += increment;
+                    if (startValue < targetValue) {
+                        element.textContent = Math.floor(startValue);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = targetValue;
+                    }
+                }
+                updateCounter();
+            }
+    
+            function handleIntersect(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const span = entry.target;
+                        const targetValue = parseInt(span.getAttribute('value'), 10);
+                        animateCountUp(span, targetValue, 20000); // 2 segundos
+                        observer.unobserve(span);
+                    }
+                });
+            }
+    
+            const observer = new IntersectionObserver(handleIntersect, {
+                threshold: 0.5 // 50% visível
+            });
+    
+            document.querySelectorAll('.numeros span').forEach(span => observer.observe(span));
+        </script>
+
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="cta-text">
+            <h1>Compre os melhores perfis aqui na <b>Nova Metálica</b></h1>
+            <button>Solicitar meu orçamento agora!</button>
+        </div>
+
+        <div class="faq">
+            <h1>FAQ</h1>
+            <div class="faq-item">
+                <p class="faq-question">Qual tempo de retorno do investimento?</p>
+                <button class="faq-toggle">
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>12-24 meses</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <p class="faq-question">Qual suporte você terá da Fast?</p>
+                <button class="faq-toggle">
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati excepturi expedita incidunt aspernatur eligendi, vero architecto praesentium dolorem ut veritatis officia sint? Veniam recusandae doloribus tempore dicta numquam culpa exercitationem!</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <p class="faq-question">Posso abrir minha franquia em qualquer lugar?</p>
+                <button class="faq-toggle">
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis beatae, ipsum nostrum, accusamus rem dolorum saepe, eveniet fugiat obcaecati voluptate velit molestias assumenda! Praesentium, esse quisquam consectetur ipsam hic recusandae.</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const faqAnswer = faqItem.querySelector('.faq-answer');
+
+        // Close all open answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            if (answer !== faqAnswer) {
+                answer.classList.remove('active');
+            }
+        });
+
+        // Toggle current answer
+        faqAnswer.classList.toggle('active');
+
+        // Update icon
+        document.querySelectorAll('.faq-toggle .icon').forEach(icon => {
+            icon.textContent = '+';
+        });
+        const icon = button.querySelector('.icon');
+        icon.textContent = faqAnswer.classList.contains('active') ? '-' : '+';
+    });
+});
+
+        </script>
+
+    </section>
+
+    <footer class="footer" id="footer">
+        <div>
+            <img src="assets/logo-black-nova.png" alt="logo da nova metalica">
+        </div>
+        <div>
+            <p>Todos os direitos reservados | &copy 2024</p>
+            <p>Desenvolvido por <a href="https://www.linkedin.com/in/aleph-ramos" target="_blank">Aleph</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

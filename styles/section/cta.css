@@ -1,0 +1,132 @@
+.cta{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5%;
+    gap: 20px;
+    background-color: var(--color--black);
+}
+
+.cta-text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.cta-text h1{
+    font-weight: 400;
+    font-size: 2rem;
+    width: 90%;
+    line-height: 100%;
+    text-align: left;
+    color: var(--color--white);
+}
+
+.cta-text h1 b{
+    color: var(--color--blue);
+    font-weight: 500;
+}
+
+.cta-text button{
+    background-color: var(--color--white);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.cta-text button:hover{
+    background-color: var(--color--blue);
+    color: var(--color--white);
+    padding: 10px 25px;
+}
+
+.faq {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color--white);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.faq h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color--black);
+    font-weight: 600;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--color--red);
+    padding: 10px;
+    background-color: var(--color--black);
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.faq-question {
+    font-size: 1rem;
+    color: var(--color--white);
+    margin: 0;
+    width: 80%;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: var(--color--white);
+}
+
+.faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0;
+    margin-top: 10px;
+    color: var(--color--white);
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+
+.faq-answer.active {
+    max-height: 300px;
+    padding: 10px 0;
+}
+
+.faq-item.active {
+    background-color: var(--color--red); /* Alterar para a cor que deseja para o FAQ aberto */
+    border-color: var(--color--white); /* Mudar a borda também, se quiser */
+}
+
+.faq-answer.active {
+    max-height: 300px;
+    padding: 10px 0;
+}

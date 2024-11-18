@@ -1,0 +1,143 @@
+.diferencas{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    gap: 50px;
+    position: relative;
+    background-color: var(--color--blue);
+}
+
+.OU{
+    position: absolute;
+    font-size: 10rem;
+    letter-spacing: -20px;
+    left: 49%;
+    transform: translateX(-50%) rotate(-15deg);
+    color: var(--color--black);
+    font-weight: 400;
+    z-index: 4;
+    
+}
+
+.diferencas-stick{
+    width: 50%;
+    height: 85%;
+    padding: 15px;
+    background-color: var(--color--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    position: relative;
+}
+
+.diferencas-stick h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color--black);
+}
+
+.diferencas-stick p {
+    font-weight: 300;
+}
+
+.diferencas-stick div{
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diferencas-stick .stick-btn{
+    position: absolute;
+    width: 35%;
+    height: 6%;
+    right: 10%;
+    top: 35%;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px 15px;
+    border-radius: 7px 7px 7px 0;
+    cursor: pointer;
+    color: var(--color--black);
+    font-size: .7rem;
+    font-weight: 600;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    transition: all .1s ease;
+}
+
+.diferencas-stick .stick-btn:hover{
+    height: 5%;
+    width: 33%;
+}
+
+.diferencas-stick button{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: var(--color--black);
+    color: var(--color--white);
+    font-weight: 500;
+    border: 1px solid var(--color--white);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.diferencas-stick button:hover{
+    background-color: transparent;
+    color: var(--color--black);
+    border: 1px solid var(--color--black);
+}
+
+.diferencas-engenheirado{
+    width: 50%;
+    height: 85%;
+    padding: 15px;
+    border: 1px solid var(--color--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.diferencas-engenheirado h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color--white);
+}
+
+.diferencas-engenheirado p {
+    color: var(--color--white);
+    font-weight: 300;
+}
+
+.diferencas-engenheirado div{
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diferencas-engenheirado button{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: var(--color--white);
+    color: var(--color--black);
+    font-weight: 500;
+    border: 1px solid var(--color--black);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.diferencas-engenheirado button:hover{
+    background-color: transparent;
+    color: var(--color--white);
+    border: 1px solid var(--color--white);
+}
