@@ -1,0 +1,197 @@
+.diferencas2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color--black); /* Fundo opcional */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    padding: 0 5%;
+    gap: 20px;
+}
+
+
+
+.faixa {
+    display: flex;
+    position: absolute;
+    top: -15%;
+    left: -15%;
+    transform: rotate(-23deg) !important;
+    white-space: nowrap;
+    background: repeating-linear-gradient(
+        45deg,
+        #000,
+        #000 30px,
+        #ffcc00 30px,
+        #ffcc00 60px
+    ); /* Faixa preta e amarela */
+    animation: slide 5s linear infinite;
+    border: 1px solid var(--color--black); /* Borda preta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.faixa p {
+    font-size: 24px; /* Tamanho do texto */
+    font-weight: 600;
+    color: #000; /* Cor do texto */
+    text-transform: uppercase;
+    margin-right: 300px; /* Espaço entre repetições */
+    background-color: #ffcc00;
+    height: 100%!important;
+    padding: 10px;
+}
+
+.diferencas2-stick{
+    width: 40%;
+    height: 70%;
+    padding: 25px;
+    background-color: var(--color--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    z-index: 1;
+}
+
+.diferencas2-stick h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color--black);
+}
+
+.diferencas2-stick p {
+    font-weight: 300;
+}
+
+.diferencas2-stick div{
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diferencas2-stick .stick-btn{
+    position: absolute;
+    width: 35%;
+    height: 6%;
+    right: 10%;
+    top: 35%;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px 15px;
+    border-radius: 7px 7px 7px 0;
+    cursor: pointer;
+    color: var(--color--black);
+    font-size: .7rem;
+    font-weight: 600;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    transition: all .1s ease;
+}
+
+.diferencas2-stick .stick-btn:hover{
+    height: 5%;
+    width: 33%;
+}
+
+.diferencas2-stick button{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: var(--color--black);
+    color: var(--color--white);
+    font-weight: 500;
+    border: 1px solid var(--color--white);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.diferencas2-stick button:hover{
+    background-color: transparent;
+    color: var(--color--black);
+    border: 1px solid var(--color--black);
+}
+
+/* corte */
+
+.diferencas2-engenheirado{
+    width: 40%;
+    height: 70%;
+    padding: 25px;
+    background-color: var(--color--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    position: absolute;
+    bottom: 40px;
+    right: 5%;
+    z-index: 1;
+}
+
+.diferencas2-engenheirado h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color--black);
+}
+
+.diferencas2-engenheirado p {
+    font-weight: 300;
+}
+
+.diferencas2-engenheirado div{
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diferencas2-engenheirado .stick-btn{
+    position: absolute;
+    width: 35%;
+    height: 6%;
+    right: 10%;
+    top: 35%;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px 15px;
+    border-radius: 7px 7px 7px 0;
+    cursor: pointer;
+    color: var(--color--black);
+    font-size: .7rem;
+    font-weight: 600;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    transition: all .1s ease;
+}
+
+.diferencas2-engenheirado .stick-btn:hover{
+    height: 5%;
+    width: 33%;
+}
+
+.diferencas2-engenheirado button{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: var(--color--black);
+    color: var(--color--white);
+    font-weight: 500;
+    border: 1px solid var(--color--white);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.diferencas2-engenheirado button:hover{
+    background-color: transparent;
+    color: var(--color--black);
+    border: 1px solid var(--color--black);
+}

@@ -93,16 +93,6 @@
     color: var(--color--blue);
 }
 
-#contactForm{
-    border: 2px solid transparent;
-}
-
-.highlight {
-    border: 2px solid red!important; /* Borda vermelha */
-  }
-
-  
-
 .home-left form{
     display: flex;
     align-items: center;
