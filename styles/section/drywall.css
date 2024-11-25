@@ -90,7 +90,7 @@
 
 .drywall-text article{
     position: absolute;
-    left: -5%;
+    left: 0%;
     top: -10%;
     height: 12.5%;
     display: flex;
@@ -100,7 +100,7 @@
     width: 50%;
     background-color: var(--color--white);
     border: 1px solid var(--color--black);
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
     padding: 0 5%;
     cursor: pointer;
