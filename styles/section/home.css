@@ -58,14 +58,14 @@
 
 .home-left h1{
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 100%;
     padding: 0 2.5%;
 }
 
 .home-left h1 b{
     font-weight: 500;
-    color: var(--color--dark--blue);
+    color: var(--color--blue);
 }
 
 .home-left form{

@@ -70,12 +70,12 @@
 
 .steelframe-text h1{
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .steelframe-text h1 b{
     font-weight: 500;
-    color: var(--color--dark--blue);
+    color: var(--color--blue);
 }
 
 .steelframe-text p{
