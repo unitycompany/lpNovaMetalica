@@ -30,6 +30,14 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHCBD628');</script>
+    <!-- End Google Tag Manager -->
+
     <title>Nova Metálica | Soluções Construtivas</title>
 
 </head>
@@ -100,6 +108,119 @@
                 <button type="submit" id="buttonSubmit">Enviar</button>
 
                 <p>*Suas informações são seguras e usadas apenas para responder à sua solicitação. Garantimos total confidencialidade.</p>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const formElement = document.querySelector('#contactForm');
+                        const submitButton = formElement.querySelector('#buttonSubmit');
+                
+                        formElement.addEventListener('submit', function (event) {
+                            event.preventDefault();
+                
+                            const name = formElement.querySelector('#name').value.trim();
+                            const email = formElement.querySelector('#email').value.trim();
+                            const whatsapp = formElement.querySelector('#tel').value.trim();
+                            const cidade = formElement.querySelector('#cidade').value.trim();
+                            const estado = formElement.querySelector('#estado').value.trim();
+                            const areaAtuacao = formElement.querySelector('select').value;
+                
+                            if (!name || !email || !whatsapp || !cidade || !estado || !areaAtuacao) {
+                                alert("Por favor, preencha todos os campos corretamente.");
+                                return;
+                            }
+                
+                            displayLoadingOverlay(true);
+                
+                            const utms = getUTMs();
+                            const utmSource = utms.utm_source || 'orgânico';
+                            const utmMedium = utms.utm_medium || '';
+                            const utmCampaign = utms.utm_campaign || '';
+                            const utmContent = utms.utm_content || '';
+                            const utmTerm = utms.utm_term || '';
+                            const pageReferrer = window.location.href || 'URL não encontrada';
+                
+                            const payload = {
+                                rules: {
+                                    update: "false",
+                                    filter_status_update: "open",
+                                    equal_pipeline: "true",
+                                    status: "open",
+                                    validate_cpf: "false",
+                                },
+                                leads: [
+                                    {
+                                        id: "form-sistemas-steel-frame-asr",
+                                        user: name,
+                                        email: email,
+                                        name: name,
+                                        personal_phone: whatsapp,
+                                        mobile_phone: whatsapp,
+                                        cidade: cidade,
+                                        estado: estado,
+                                        areaAtuacao: areaAtuacao,
+                                        last_conversion: {
+                                            source: utmSource
+                                        },
+                                        custom_fields: {
+                                            uniqueId: generateUniqueId(),
+                                            utm_source: utmSource,
+                                            utm_medium: utmMedium,
+                                            utm_campaign: utmCampaign,
+                                            utm_content: utmContent,
+                                            utm_term: utmTerm,
+                                            page_referrer: pageReferrer
+                                        }
+                                    }
+                                ]
+                            };
+                
+                            fetch('https://app.pipe.run/webservice/integradorJson?hash=56c50ba8-44e9-42fd-ba51-93207130106f', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(payload)
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('Success:', data);
+                                displayLoadingOverlay(false);
+                                alert('Formulário enviado com sucesso!');
+                                formElement.reset();
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error);
+                                displayLoadingOverlay(false);
+                                alert('Houve um erro ao enviar o formulário.');
+                            });
+                        });
+                
+                        function generateUniqueId() {
+                            return new Date().getTime().toString();
+                        }
+                
+                        function getUTMs() {
+                            const urlParams = new URLSearchParams(window.location.search);
+                            return {
+                                utm_source: urlParams.get('utm_source'),
+                                utm_medium: urlParams.get('utm_medium'),
+                                utm_campaign: urlParams.get('utm_campaign'),
+                                utm_content: urlParams.get('utm_content'),
+                                utm_term: urlParams.get('utm_term'),
+                            };
+                        }
+                
+                        function displayLoadingOverlay(show) {
+                            if (show) {
+                                console.log("Mostrando overlay de carregamento...");
+                            } else {
+                                console.log("Removendo overlay de carregamento...");
+                            }
+                        }
+                    });
+                </script>
+                
+
             </form>
 
 
@@ -484,6 +605,11 @@
             </svg>
         </div>
     </footer>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHCBD628"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
 </body>
 </html>
