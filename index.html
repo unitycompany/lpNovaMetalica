@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    
 <head>
 
     <meta charset="UTF-8">
@@ -38,20 +39,24 @@
     })(window,document,'script','dataLayer','GTM-NHCBD628');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <title>Nova Metálica | Soluções Construtivas</title>
 
 </head>
+
 <body>
 
     <section class="home" id="home">    
-        <div class="home-left">
+        <div class="home-left" data-aos="fade-in" data-aos-delay="0">
 
-            <div>
+            <div data-aos="fade-up" data-aos-delay="100">
                 <img src="assets/logo-white-nova.svg" alt="logo da nova metálica">
                 <button>Quero comprar perfis de qualidade</button>
             </div>
 
-            <h1>Colocar uma Copy <b class="b">Super Chamativa</b></h1>
+            <h1 data-aos="fade-up" data-aos-delay="150">Colocar uma Copy <b class="b">Super Chamativa</b></h1>
 
             <script>
                 const specificBold = document.querySelector("b");
@@ -86,7 +91,7 @@
                 typeEffect(); // Inicia o efeito
               </script>
 
-            <form id="contactForm">
+            <form id="contactForm" data-aos="fade-in" data-aos-delay="200">
                 <div>
                     <input type="text" id="name" placeholder="Nome da sua Empresa">
                     <input type="tel" id="tel" placeholder="Whatsapp">
@@ -236,23 +241,20 @@
 
         <div class="background-home"></div>
 
-        <div class="home-right">
-            <img src="assets/image-home-1.jpg">
-            <img src="assets/image-home-2.jpg">
-            <img src="assets/image-home-3.jpg">
+        <div class="home-right" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/image-home-1.jpg" data-aos="fade-in" data-aos-delay="100">
+            <img src="assets/image-home-2.jpg" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/image-home-3.jpg" data-aos="fade-in" data-aos-delay="300">
         </div>
     </section>
 
     <section class="steelframe" id="steelframe">
-        <div class="steelframe-galery swiper-container">
+        <div class="steelframe-galery swiper-container" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">Card 1</div>
                 <div class="swiper-slide">Card 2</div>
                 <div class="swiper-slide">Card 3</div>
                 <div class="swiper-slide">Card 4</div>
-                <div class="swiper-slide">Card 5</div>
-                <div class="swiper-slide">Card 6</div>
-                <div class="swiper-slide">Card 7</div>
             </div>
             <!-- Botões de navegação -->
             <div class="swiper-button-next"></div>
@@ -260,22 +262,49 @@
         </div>
 
         <div class="steelframe-text">
-            <h1>Falar sobre <b>Steel Frame</b></h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
+            <h1 data-aos="fade-up" data-aos-delay="100">Falar sobre <b>Steel Frame</b></h1>
+            <p data-aos="fade-up" data-aos-delay="150">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
     
-            <article>
+            <article onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="300">
                 <h2>Compre direto da fábrica</h2>
                 <img src="assets/logo-black-nova.png" alt="logo da nova metálica">
             </article>
     
-            <div>   
-                <div class="steelframe-products">Guia ( 90, 140 )</div>
-                <div class="steelframe-products">Montante ( 90, 140 )</div>
-                <div class="steelframe-products">Cartola ( 0,80 - 0,95 )</div>
-                <div class="steelframe-products">Treliça pronta</div>
+            <div data-aos="fade-in" data-aos-delay="400">   
+                <div class="steelframe-products" data-target="0">Guia ( 90, 140 )</div>
+                <div class="steelframe-products" data-target="1">Montante ( 90, 140 )</div>
+                <div class="steelframe-products" data-target="2">Cartola ( 0,80 - 0,95 )</div>
+                <div class="steelframe-products" data-target="3">Treliça pronta</div>
             </div>
+
+            <script>
+                // Certifique-se de que o Swiper foi carregado corretamente
+                document.addEventListener('DOMContentLoaded', function () {
+                    const swiper = new Swiper('.steelframe-galery', {
+                        loop: true, // Se necessário, para permitir navegação contínua
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev'
+                        }
+                    });
+
+                    // Seleciona todos os botões de produto
+                    const productButtons = document.querySelectorAll('.steelframe-products');
+
+                    // Adiciona o evento de clique em cada botão
+                    productButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            // Pega o índice do slide de destino
+                            const targetIndex = parseInt(this.getAttribute('data-target'), 10);
+                            // Move o swiper para o slide correspondente
+                            swiper.slideTo(targetIndex);
+                        });
+                    });
+                });
+
+            </script>
     
-            <button>Solicitar um orçamento!</button>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-in" data-aos-delay="400">Solicitar um orçamento!</button>
         </div>
     </section>
     
@@ -288,39 +317,64 @@
         </div>
 
         <div class="drywall-text">
-            <h1>Falar sobre <b>Drywall</b></h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
+            <h1 data-aos="fade-up" data-aos-delay="100">Falar sobre <b>Drywall</b></h1>
+            <p data-aos="fade-up" data-aos-delay="150">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
     
-            <article>
+            <article onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="200">
                 <h2>Compre direto da fábrica</h2>
                 <img src="assets/logo-black-nova.png" alt="logo da nova metálica">
             </article>
     
-            <div>   
-                <div class="drywall-products">Guia ( 48 - 70 - 90 )</div>
-                <div class="drywall-products">Montante ( 48 - 70 - 90 )</div>
-                <div class="drywall-products">Perfil F530</div>
-                <div class="drywall-products">Tabicas</div>
-                <div class="drywall-products">Cantoneiras</div>
+            <div data-aos="fade-in" data-aos-delay="300">   
+                <div class="drywall-products" data-target="0">Guia ( 48 - 70 - 90 )</div>
+                <div class="drywall-products" data-target="1">Montante ( 48 - 70 - 90 )</div>
+                <div class="drywall-products" data-target="2">Perfil F530</div>
+                <div class="drywall-products" data-target="3">Tabicas</div>
+                <div class="drywall-products" data-target="4">Cantoneiras</div>
             </div>
     
-            <button>Solicitar um orçamento!</button>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="400">Solicitar um orçamento!</button>
         </div>
 
-        <div class="drywall-galery swiper-container">
+        <div class="drywall-galery swiper-container" data-aos="fade-up" data-aos-delay="300">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="assets/designTeste.png"></div>
                 <div class="swiper-slide">Card 2</div>
                 <div class="swiper-slide">Card 3</div>
                 <div class="swiper-slide">Card 4</div>
                 <div class="swiper-slide">Card 5</div>
-                <div class="swiper-slide">Card 6</div>
-                <div class="swiper-slide">Card 7</div>
             </div>
             <!-- Botões de navegação -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
+
+        <script>
+            // Certifique-se de que o Swiper foi carregado corretamente
+            document.addEventListener('DOMContentLoaded', function () {
+                const swiper = new Swiper('.drywall-galery', {
+                    loop: true, // Se necessário, para permitir navegação contínua
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                });
+
+                // Seleciona todos os botões de produto
+                const productButtons = document.querySelectorAll('.drywall-products');
+
+                // Adiciona o evento de clique em cada botão
+                productButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        // Pega o índice do slide de destino
+                        const targetIndex = parseInt(this.getAttribute('data-target'), 10);
+                        // Move o swiper para o slide correspondente
+                        swiper.slideTo(targetIndex);
+                    });
+                });
+            });
+
+        </script>
 
         <script>
             const swiper = new Swiper('.swiper-container', {
@@ -336,26 +390,25 @@
     </section>
 
     <section class="diferencas2" id="diferencas2">
-        <div class="faixa">
+        <div class="faixa" data-aos="fade-in" data-aos-delay="100">
             <p>qual a diferença?</p>
         </div>
         
 
-        <div class="diferencas2-stick">
-            <h1>Perfis Stick</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum cupiditate doloremque, aut harum sunt alias reprehenderit sequi obcaecati recusandae consequatur quaerat cum expedita. Quisquam aliquid autem iusto veritatis illo.</p>
-            <div></div>
-            <button>Fazer meu orçamento agora!</button>
+        <div class="diferencas2-stick" data-aos="fade-in" data-aos-delay="50">
+            <h1 data-aos="fade-up" data-aos-delay="150">Perfis Stick</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum cupiditate doloremque, aut harum sunt alias reprehenderit sequi obcaecati recusandae consequatur quaerat cum expedita. Quisquam aliquid autem iusto veritatis illo.</p>
+            <div data-aos="fade-up" data-aos-delay="250"></div>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="300">Fazer meu orçamento agora!</button>
         </div>
 
-        <div class="diferencas2-engenheirado">
-            <div>
-                Foto de perfil engenheirado
+        <div class="diferencas2-engenheirado" data-aos="fade-in" data-aos-delay="50">
+            <div data-aos="fade-up" data-aos-delay="150">
             </div>
-            <h1>Perfis Engenheirado</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum cupiditate doloremque, aut harum sunt alias reprehenderit sequi obcaecati recusandae consequatur quaerat cum expedita. Quisquam aliquid autem iusto veritatis illo.</p>
+            <h1 data-aos="fade-up" data-aos-delay="200">Perfis Engenheirado</h1>
+            <p data-aos="fade-up" data-aos-delay="300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum cupiditate doloremque, aut harum sunt alias reprehenderit sequi obcaecati recusandae consequatur quaerat cum expedita. Quisquam aliquid autem iusto veritatis illo.</p>
 
-            <button>Fazer meu orçamento agora!</button>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="400">Fazer meu orçamento agora!</button>
         </div>
 
         <div class="custom-shape-divider-top-1733145735">
@@ -399,47 +452,47 @@
 
     <section class="qualidades" id="qualidades">
         <div class="qualidades-cards">
-            <div class="qualidades-card">
-                <div class="qualidades-card-icon">
+            <div class="qualidades-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="qualidades-card-icon" data-aos="fade-up" data-aos-delay="250">
                     <img src="/assets/nacional.png">
                 </div>
                 <div class="qualidades-card-text">
-                    <h2>Produtos Nacionais</h2>
-                    <p>Asseguramos que todos os nossos perfis de Steel Frame são 100% normatizados e fabricados exclusivamente com materiais de siderúrgicas brasileiras, sem o uso de aço importado.</p>
-                    <button>Solicitar orçamento</button>
+                    <h2 data-aos="fade-in" data-aos-delay="300">Produtos Nacionais</h2>
+                    <p data-aos="fade-up" data-aos-delay="400">Asseguramos que todos os nossos perfis de Steel Frame são 100% normatizados e fabricados exclusivamente com materiais de siderúrgicas brasileiras, sem o uso de aço importado.</p>
+                    <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="500">Solicitar orçamento</button>
                 </div>
             </div>
 
-            <div class="qualidades-card">
-                <div class="qualidades-card-icon">
+            <div class="qualidades-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="qualidades-card-icon" data-aos="fade-up" data-aos-delay="250">
                     <img src="/assets/escudo.png">
                 </div>
                 <div class="qualidades-card-text">
-                    <h2>Soluções Eficientes</h2>
-                    <p>Oferecemos a menor taxa de aço do mercado, resultando em estruturas de Steel Frame mais leves e econômicas.</p>
-                    <button>Solicitar orçamento</button>
+                    <h2 data-aos="fade-in" data-aos-delay="300">Soluções Eficientes</h2>
+                    <p data-aos="fade-up" data-aos-delay="400">Oferecemos a menor taxa de aço do mercado, resultando em estruturas de Steel Frame mais leves e econômicas.</p>
+                    <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="500">Solicitar orçamento</button>
                 </div>
             </div>
 
-            <div class="qualidades-card">
-                <div class="qualidades-card-icon">
+            <div class="qualidades-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="qualidades-card-icon" data-aos="fade-up" data-aos-delay="250">
                     <img src="/assets/nuvem.png">
                 </div>
                 <div class="qualidades-card-text">
-                    <h2>Tecncologia de Ponta</h2>
-                    <p>Equipados com tecnologia CNC Framecad e máquinas de fabricação de telhas termoacústicas, garantimos precisão e inovação em cada perfil de Steel Frame.</p>
-                    <button>Solicitar orçamento</button>
+                    <h2 data-aos="fade-in" data-aos-delay="300">Tecncologia de Ponta</h2>
+                    <p data-aos="fade-up" data-aos-delay="400">Equipados com tecnologia CNC Framecad e máquinas de fabricação de telhas termoacústicas, garantimos precisão e inovação em cada perfil de Steel Frame.</p>
+                    <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="500">Solicitar orçamento</button>
                 </div>
             </div>
 
-            <div class="qualidades-card">
-                <div class="qualidades-card-icon">
+            <div class="qualidades-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="qualidades-card-icon" data-aos="fade-up" data-aos-delay="250">
                     <img src="/assets/m.png">
                 </div>
                 <div class="qualidades-card-text">
-                    <h2>Parcerias Estratégicas</h2>
-                    <p>Colaboramos com gigantes como CSN Siderúrgica, Arcellor Mital, Saint-Gobain e STO Brasil para oferecer soluções de Steel Frame de qualidade inigualável.</p>
-                    <button>Solicitar orçamento</button>
+                    <h2 data-aos="fade-in" data-aos-delay="300">Parcerias Estratégicas</h2>
+                    <p data-aos="fade-up" data-aos-delay="400">Colaboramos com gigantes como CSN Siderúrgica, Arcellor Mital, Saint-Gobain e STO Brasil para oferecer soluções de Steel Frame de qualidade inigualável.</p>
+                    <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="500">Solicitar orçamento</button>
                 </div>
             </div>
         </div>
@@ -453,11 +506,11 @@
 
         <div class="qualidades-video">
             <div class="qualidades-video-text">
-                <h2>Como são fábricados nossos perfis</h2>
-                <p>A F325iT é uma máquina de última geração, equipada com um rolo calibrador automático, um avançado sistema hidráulico de fluxo variável e ferramentas adicionais de perfuração. Essa combinação permite ajustar com precisão os perfis de aço, otimizar o desempenho da máquina e oferecer flexibilidade na criação de cortes personalizados. Como resultado, o F325iT se destaca como a solução mais eficiente e versátil da FRAMECAD para fabricação de estruturas em Steel Frame.</p>
-                <button>Solicitar orçamento</button>
+                <h2 data-aos="fade-in" data-aos-delay="100">Como são fábricados nossos perfis</h2>
+                <p data-aos="fade-up" data-aos-delay="200">A F325iT é uma máquina de última geração, equipada com um rolo calibrador automático, um avançado sistema hidráulico de fluxo variável e ferramentas adicionais de perfuração. Essa combinação permite ajustar com precisão os perfis de aço, otimizar o desempenho da máquina e oferecer flexibilidade na criação de cortes personalizados. Como resultado, o F325iT se destaca como a solução mais eficiente e versátil da FRAMECAD para fabricação de estruturas em Steel Frame.</p>
+                <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="300">Solicitar orçamento</button>
             </div>
-            <div class="qualidades-video-container">
+            <div class="qualidades-video-container" data-aos="fade-in" data-aos-delay="300">
                 <iframe title="Video Player" src="https://www.youtube.com/embed/KVCquOX5toQ" width="100%" height="100%" frameborder="0" border="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen"></iframe>
             </div>
         </div>
@@ -465,20 +518,20 @@
     </section>
 
     <section class="numeros" id="numeros">
-        <div class="numeros-container">
-            <div class="numeros-card">
+        <div class="numeros-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="numeros-card" data-aos="fade-up" data-aos-delay="200">
                 <h4>Perfis vendidos</h4>
                 <span value="240224">0</span>
             </div>
-            <div class="numeros-card">
+            <div class="numeros-card" data-aos="fade-up" data-aos-delay="300">
                 <h4>Montantes vendidos</h4>
                 <span value="190320">0</span>
             </div>
-            <div class="numeros-card">
+            <div class="numeros-card" data-aos="fade-up" data-aos-delay="400">
                 <h4>Estados atendidos</h4>
                 <span value="26">0</span>
             </div>
-            <div class="numeros-card">
+            <div class="numeros-card" data-aos="fade-up" data-aos-delay="500">
                 <h4>Pioneira desde</h4>
                 <span value="2000">0</span>
             </div>
@@ -523,14 +576,14 @@
 
     <section class="cta" id="cta">
         <div class="cta-text">
-            <h1>Compre os melhores perfis aqui na <b>Nova Metálica</b></h1>
-            <button>Solicitar meu orçamento agora!</button>
+            <h1 data-aos="fade-up" data-aos-delay="100">Compre os melhores perfis aqui na <b>Nova Metálica</b></h1>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-in" data-aos-delay="200">Solicitar meu orçamento agora!</button>
         </div>
 
-        <div class="faq">
+        <div class="faq" data-aos="fade-up" data-aos-delay="100">
             <h1>FAQ</h1>
-            <div class="faq-item">
-                <p class="faq-question">Qual tempo de retorno do investimento?</p>
+            <div class="faq-item" data-aos="fade-in" data-aos-delay="150">
+                <p class="faq-question" data-aos="fade-in" data-aos-delay="200">Qual tempo de retorno do investimento?</p>
                 <button class="faq-toggle">
                     <span class="icon">+</span>
                 </button>
@@ -539,8 +592,8 @@
                 </div>
             </div>
         
-            <div class="faq-item">
-                <p class="faq-question">Qual suporte você terá da Fast?</p>
+            <div class="faq-item" data-aos="fade-in" data-aos-delay="250">
+                <p class="faq-question" data-aos="fade-in" data-aos-delay="300">Qual suporte você terá da Fast?</p>
                 <button class="faq-toggle">
                     <span class="icon">+</span>
                 </button>
@@ -549,8 +602,8 @@
                 </div>
             </div>
         
-            <div class="faq-item">
-                <p class="faq-question">Posso abrir minha franquia em qualquer lugar?</p>
+            <div class="faq-item" data-aos="fade-in" data-aos-delay="350">
+                <p class="faq-question" data-aos="fade-in" data-aos-delay="400">Posso abrir minha franquia em qualquer lugar?</p>
                 <button class="faq-toggle">
                     <span class="icon">+</span>
                 </button>
@@ -592,7 +645,7 @@
     <footer class="footer" id="footer">
 
         <div>
-            <img src="assets/logo-black-nova.png" alt="logo da nova metalica">
+            <img src="assets/logo-black-nova.png" alt="logo da nova metalica" data-aos="fade-up" data-aos-delay="100">
         </div>
         <div>
             <p>Todos os direitos reservados | &copy 2024</p>
@@ -605,6 +658,14 @@
             </svg>
         </div>
     </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Inicializando o AOS -->
+    <script>
+        AOS.init(); // Inicializa o AOS
+    </script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHCBD628"
