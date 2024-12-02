@@ -302,7 +302,8 @@
     
     .home-left{
         width: 100%;
-        height: 80%;
+        height: auto;
+        gap: 30px;
     }
 
     .home-left div{
@@ -310,12 +311,26 @@
         justify-content: center;
     }
 
+    .home-left form div:nth-child(1) input{
+        padding: 10px;
+    }
+
+    .home-left form div:nth-child(n + 1) input{
+        padding: 10px;
+    }
+
     .home-left form input{
-        margin: 10px 0;
+        margin: 5px 0;
+        padding: 10px;
     }
 
     .home-left form select{
-        margin-top: 10px;
+        margin-top: 5px;
+        padding: 10px;
+    }
+
+    .home-left button{
+        padding: 10px;
     }
 
     .home-left form p{
