@@ -673,6 +673,11 @@
     <!-- Inicializando o AOS -->
     <script>
         AOS.init(); // Inicializa o AOS
+        AOS.init({
+  disable: function() {
+    return window.innerWidth < 768; // Desativa animações em telas menores que 768px
+  }
+});
     </script>
 
     <!-- Google Tag Manager (noscript) -->

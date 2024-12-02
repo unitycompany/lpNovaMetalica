@@ -210,6 +210,7 @@
     .steelframe-text {
         width: 100%;
         align-items: center;
+        flex-direction: column-reverse;
     }
 
     .steelframe-text h1{
