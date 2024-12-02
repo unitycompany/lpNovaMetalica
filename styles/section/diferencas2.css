@@ -5,18 +5,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color--black); /* Fundo opcional */
-    overflow: hidden; /* Esconde o excesso de conteúdo */
-    padding: 0 5%;
+    background-color: var(--color--gray); 
+    overflow: hidden; 
+    padding: 5% 5%;
     gap: 20px;
 }
 
+.custom-shape-divider-top-1733145735 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1733145735 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 15px;
+}
+
+.custom-shape-divider-top-1733145735 .shape-fill {
+    fill: var(--color--dark--blue);
+}
 
 
 .faixa {
     display: flex;
     position: absolute;
-    top: -15%;
+    top: 0%;
     left: -15%;
     transform: rotate(-23deg) !important;
     white-space: nowrap;
@@ -26,19 +45,19 @@
         #000 30px,
         #ffcc00 30px,
         #ffcc00 60px
-    ); /* Faixa preta e amarela */
+    );
     animation: slide 5s linear infinite;
-    border: 1px solid var(--color--black); /* Borda preta */
+    border: 1px solid var(--color--black); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 2;
 }
 
 .faixa p {
-    font-size: 24px; /* Tamanho do texto */
+    font-size: 24px;
     font-weight: 600;
-    color: #000; /* Cor do texto */
+    color: #000; 
     text-transform: uppercase;
-    margin-right: 300px; /* Espaço entre repetições */
+    margin-right: 300px; 
     background-color: #ffcc00;
     height: 100%!important;
     padding: 10px;
@@ -55,15 +74,15 @@
     justify-content: space-between;
     gap: 15px;
     position: absolute;
-    top: 40px;
+    top: 80px;
     left: 5%;
     z-index: 1;
 }
 
 .diferencas2-stick h1{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 400;
-    color: var(--color--black);
+    color: var(--color--orange);
 }
 
 .diferencas2-stick p {
@@ -75,6 +94,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../../assets/image-home-1.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
 }
 
 .diferencas2-stick .stick-btn{
@@ -105,7 +128,7 @@
     width: 100%;
     height: 10%;
     border-radius: 10px;
-    background-color: var(--color--black);
+    background-color: var(--color--dark--blue);
     color: var(--color--white);
     font-weight: 500;
     border: 1px solid var(--color--white);
@@ -114,9 +137,9 @@
 }
 
 .diferencas2-stick button:hover{
-    background-color: transparent;
-    color: var(--color--black);
-    border: 1px solid var(--color--black);
+    background-color: var(--color--black);
+    color: var(--color--orange);
+    border: 1px solid var(--color--orange);
 }
 
 /* corte */
@@ -132,15 +155,15 @@
     justify-content: space-between;
     gap: 15px;
     position: absolute;
-    bottom: 40px;
+    bottom: 80px;
     right: 5%;
     z-index: 1;
 }
 
 .diferencas2-engenheirado h1{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 400;
-    color: var(--color--black);
+    color: var(--color--orange);
 }
 
 .diferencas2-engenheirado p {
@@ -152,6 +175,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../../assets/image-home-3.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
 }
 
 .diferencas2-engenheirado .stick-btn{
@@ -182,7 +209,7 @@
     width: 100%;
     height: 10%;
     border-radius: 10px;
-    background-color: var(--color--black);
+    background-color: var(--color--dark--blue);
     color: var(--color--white);
     font-weight: 500;
     border: 1px solid var(--color--white);
@@ -191,7 +218,7 @@
 }
 
 .diferencas2-engenheirado button:hover{
-    background-color: transparent;
-    color: var(--color--black);
-    border: 1px solid var(--color--black);
+    background-color: var(--color--black);
+    color: var(--color--orange);
+    border: 1px solid var(--color--orange);
 }

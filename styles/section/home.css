@@ -1,20 +1,3 @@
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.background-video-acima{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .3);
-}
 
 .home{
     height: 100vh;
@@ -28,7 +11,7 @@
 
 .home-left{
     width: 50%;
-    height: 80%;
+    height: 70%;
     background-color: var(--color--white);
     position: relative;
     display: flex;
@@ -61,10 +44,9 @@
     font-weight: 600;
     font-size: .8rem;
     background-color: var(--color--white);
-    border: 1px solid var(--color--blue);
-    border-radius: 10px;
     cursor: pointer;
     transition: all .2s ease;
+    border-radius: 5px;
 }
 
 .home-left div button:hover{
@@ -81,16 +63,9 @@
     padding: 0 2.5%;
 }
 
-.home-left h4{
-    font-size: .8rem;
-    font-weight: 400;
-    line-height: 100%;
-    padding: 0 3%;
-}
-
 .home-left h1 b{
     font-weight: 500;
-    color: var(--color--blue);
+    color: var(--color--dark--blue);
 }
 
 .home-left form{
@@ -128,7 +103,7 @@
 
 .home-left form div:nth-child(1) input{
     height: 100%;
-    padding: 0px 10px;
+    padding: 0px 8px;
     width: 50%;
 }
 
@@ -172,7 +147,7 @@
 }
 
 .home-left form button:hover{
-    background-color: var(--color--black);
+    background-color:  var(--color--dark--blue);
     border: 1px solid var(--color--blue);
     color: var(--color--blue);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
@@ -185,14 +160,40 @@
     position: relative;
 }
 
-
 .background-home{
+    position: absolute;
+    z-index: -1;
+    background: #000000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-home::before{
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 1;
-    background-color: var(--color--blue);
-    clip-path: polygon(85% 0, 100% 0%, 100% 100%, 65% 100%);
+    z-index: 2;
+    background-image: url('../../assets/fundo-home.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    filter: contrast(110%) brightness(110%);
+    background-size: cover;
+    opacity: .8;
+}
+
+.background-home::after{
+    content: '';
+    position: absolute;
+    z-index: 3;
+    border-image: fill 0 linear-gradient(240deg, #0001, #179cd6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .6;
 }
 
 @keyframes ProductEffect{
@@ -218,34 +219,63 @@
     justify-content: center;
 }
 
-.home-right button{
+@keyframes HomeAnimation{
+    0%{
+        transform: translateX(2px);
+    }
+
+    50%{
+        transform: translateX(-2px);
+    }
+}
+
+.custom-shape-divider-bottom-1733143583 {
     position: absolute;
-    right: 25%;
-    bottom: 35%;
-    transform: translateX(50%);
-    z-index: 3;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 7px 15px;
-    border-radius: 7px 7px 7px 0;
-    cursor: pointer;
-    color: var(--color--black);
-    font-size: .7rem;
-    font-weight: 600;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    transition: all .1s ease;
-}
-
-.home-right button:hover{
-    background-color: var(--color--white);
-    padding: 5px 17px;
-}
-
-.home-right img{
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 85%;
-    object-fit: contain;
-    animation: ProductEffect 8s infinite linear;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1733143583 svg {
     position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 300px;
+}
+
+.custom-shape-divider-bottom-1733143583 .shape-fill {
+    fill: #FFFFFF;
+}
+.home-right img{
+    position: absolute;
+    width: 60%;
+    height: 30%;
+    object-fit: cover;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    filter: contrast(110%);
+}
+
+
+.home-right img:nth-child(1){
+    top: 10%;
+    right: 5%;
+    z-index: 1;
+    animation: HomeAnimation 3s linear infinite alternate-reverse;
+}
+
+.home-right img:nth-child(2){
+    right: 30%;
     z-index: 2;
+    animation: HomeAnimation 6s linear infinite alternate-reverse;
+}
+
+.home-right img:nth-child(3){
+    bottom: 10%;
+    right: 5%;
+    z-index: 3;
+    animation: HomeAnimation 9s linear infinite alternate-reverse;
 }

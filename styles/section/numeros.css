@@ -1,12 +1,11 @@
 .numeros{
     width: 100%;
-    height: 25vh;
+    height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 5%;
-    background-color: var(--color--white);
-    border: 2px dashed var(--color--blue);
+    background-color: var(--color--orange);
     border-left: 0;
     border-right: 0;
 }
@@ -26,19 +25,17 @@
     flex-direction: column;
     gap: 15px;
     height: 100%;
-    transform: skew(-10deg);
-    background-color: var(--color--blue);
     padding: 20px;
 }
 
 .numeros-card h4{
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.3rem;
     color: var(--color--white);
 }
 
 .numeros-card span{
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 200;
     color: var(--color--white);
 }

@@ -6,7 +6,7 @@
     width: 100%;
     padding: 0 5%;
     gap: 20px;
-    background-color: var(--color--black);
+    background-color: var(--color--dark--blue);
 }
 
 .cta-text{
@@ -36,7 +36,7 @@
 .cta-text button{
     background-color: var(--color--white);
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all .2s ease;
 }
@@ -56,14 +56,14 @@
     flex-direction: column;
     background-color: var(--color--white);
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .faq h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: var(--color--black);
+    color: var(--color--dark--blue);
     font-weight: 600;
 }
 
@@ -74,7 +74,7 @@
     background-color: var(--color--black);
     position: relative;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .faq-question {
