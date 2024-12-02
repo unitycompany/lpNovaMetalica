@@ -49,13 +49,14 @@
 .swiper-button-next,
 .swiper-button-prev {
     color: var(--color--dark--blue)!important; 
-    width: 100px;
-    height: 100px;
+    width: 50px!important;
+    height: 50px!important;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    opacity: .4;
 }
 
 .swiper-button-next {
