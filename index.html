@@ -271,11 +271,7 @@
         <div class="steelframe-text">
             <h1 data-aos="fade-up" data-aos-delay="100">Falar sobre <b>Steel Frame</b></h1>
             <p data-aos="fade-up" data-aos-delay="150">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos in adipisci soluta, ipsa amet, <b>ipsam commodi quam dolorum quibusdam, vitae at repellendus</b> culpa vero. Dicta numquam tempora soluta molestiae praesentium!</p>
-    
-            <!-- <article onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="300">
-                <h2>Compre direto da fábrica</h2>
-                <img src="assets/logo-black-nova.png" alt="logo da nova metálica">
-            </article> -->
+
     
             <div data-aos="fade-up" data-aos-delay="400">   
                 <div class="steelframe-products" data-target="0">Guia ( 90, 140 )</div>
@@ -309,12 +305,13 @@
                         button.addEventListener('click', function () {
                             // Pega o índice do slide de destino
                             const targetIndex = parseInt(this.getAttribute('data-target'), 10);
-                            // Move o swiper para o slide correspondente
-                            swiper.slideTo(targetIndex);
+                            // Move o swiper para o slide correspondente, ajustando para o loop
+                            swiper.slideTo(targetIndex + 1); // Adiciona +1 para corresponder ao índice correto dentro do loop
                         });
                     });
                 });
             </script>
+            
             
             
     
@@ -344,7 +341,7 @@
                 <div class="drywall-products" data-target="3">Montante ( 48 - 70 - 90 )</div>
                 <div class="drywall-products" data-target="6">Perfil F530</div>
                 <div class="drywall-products" data-target="8">Tabicas</div>
-                <div class="drywall-products" data-target="11">Cantoneiras</div>
+                <div class="drywall-products" data-target="10">Cantoneiras</div>
             </div>
     
             <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="400">Solicitar um orçamento!</button>
@@ -394,12 +391,13 @@
                     button.addEventListener('click', function () {
                         // Pega o índice do slide de destino
                         const targetIndex = parseInt(this.getAttribute('data-target'), 10);
-                        // Move o swiper para o slide correspondente
-                        swiper.slideTo(targetIndex);
+                        // Move o swiper para o slide correspondente, ajustando para o loop
+                        swiper.slideTo(targetIndex + 1); // Adiciona +1 para corresponder ao índice correto dentro do loop
                     });
                 });
             });
         </script>
+        
         
     </section>
 
