@@ -39,3 +39,20 @@
     font-weight: 200;
     color: var(--color--white);
 }
+
+@media(max-width: 768px){
+    .numeros-card h4{
+        font-size: .8rem;
+        text-align: center;
+        font-weight: 500;
+        line-height: 120%;
+    }
+
+    .numeros-card span{
+        font-size: 1.2rem;
+    }
+
+    .numeros-card:nth-child(4){
+        display: none;
+    }
+}

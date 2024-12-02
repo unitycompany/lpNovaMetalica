@@ -13,7 +13,6 @@
 .drywall-galery {
     width: 50%;
     height: 80%;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,6 +37,12 @@
     height: 100%;
     width: 100%; 
     box-sizing: border-box;
+}
+
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
 
 .swiper-button-next,
@@ -197,4 +202,71 @@
 
 .custom-shape-divider-top-1733144192 .shape-fill {
     fill: #FFFFFF;
+}
+
+@media (max-width: 768px){
+    .drywall{
+        flex-direction: column;
+        height: auto;
+        padding: 20% 2.5% 10% 2.5%;
+    }
+
+    .drywall-galery{
+        width: 100%!important;
+        height: 50vh!important;
+    }
+
+    .swiper-container{
+        width: 100%!important;
+        height: 60vh!important;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        width: 50px!important;
+        height: 50px!important;
+    }
+
+    .drywall-text {
+        width: 100%;
+        align-items: center;
+    }
+
+    .drywall-text h1{
+        text-align: center;
+    }
+
+    .drywall-text p{
+        text-align: center;
+    }
+
+    .drywall-text article{
+        display: none;
+    }
+
+    .drywall-text div{
+        justify-content: center;
+    }
+
+    .drywall-text button{
+        width: 100%;
+    }
+
+    .drywall-text button:hover{
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1240px){
+    .drywall-text button{
+        width: 60%;
+    }
+
+    .drywall-text button:hover{
+        width: 65%;
+    }
+
+    .drywall-text article{
+        display: none;
+    }
 }

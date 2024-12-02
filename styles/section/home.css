@@ -249,6 +249,7 @@
 .custom-shape-divider-bottom-1733143583 .shape-fill {
     fill: #FFFFFF;
 }
+
 .home-right img{
     position: absolute;
     width: 60%;
@@ -278,4 +279,50 @@
     right: 5%;
     z-index: 3;
     animation: HomeAnimation 9s linear infinite alternate-reverse;
+}
+
+@media (max-width: 768px){
+    .home{
+        padding: 0 2.5%;
+    }
+    
+    .home-left{
+        width: 100%;
+        height: 80%;
+    }
+
+    .home-left div{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-left form input{
+        margin: 10px 0;
+    }
+
+    .home-left form select{
+        margin-top: 10px;
+    }
+
+    .home-left form p{
+        font-size: .6rem;
+    }
+
+    .home-left div button{
+        display: none;
+    }
+
+    .home-left h1{
+        font-size: 1.5rem;
+    }
+
+    .home-right{
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1240px){
+    .home-left{
+        width: 45%;
+    }
 }
