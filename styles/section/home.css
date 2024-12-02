@@ -196,7 +196,7 @@
     content: '';
     position: absolute;
     z-index: 3;
-    border-image: fill 0 linear-gradient(240deg, #0001, #179cd6);
+    border-image: fill 0 linear-gradient(35deg, #0001, #179cd6);
     width: 100%;
     height: 100%;
     top: 0;
