@@ -184,6 +184,14 @@
     opacity: .8;
 }
 
+/* Correção para dispositivos móveis */
+@media (max-width: 768px) {
+    .background-home::before {
+        background-attachment: scroll; /* Corrige o problema do fixed no iOS */
+        background-size: auto 100%; /* Ajusta a imagem de fundo para um tamanho adequado */
+    }
+}
+
 .background-home::after{
     content: '';
     position: absolute;
@@ -195,6 +203,7 @@
     left: 0;
     opacity: .6;
 }
+
 
 @keyframes ProductEffect{
     0% {
