@@ -185,7 +185,7 @@
 
 @media (max-width: 768px){
     .steelframe{
-        flex-direction: column;
+        flex-direction: column-reverse;
         height: auto;
         padding: 10% 2.5%;
     }
@@ -210,7 +210,6 @@
     .steelframe-text {
         width: 100%;
         align-items: center;
-        flex-direction: column-reverse;
     }
 
     .steelframe-text h1{
