@@ -292,12 +292,18 @@
                         navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev'
-                        }
+                        },
+                        autoplay: {
+                            delay: 3000, // Tempo em milissegundos entre cada slide (3 segundos neste caso)
+                            disableOnInteraction: false, // Permite que o autoplay continue mesmo após interação com o swiper
+                            pauseOnMouseEnter: true // Para o autoplay quando o mouse está em cima
+                        },
+                        touchStartPreventDefault: true, // Previne o autoplay ao tocar no carrossel com o dedo
                     });
-
+            
                     // Seleciona todos os botões de produto
                     const productButtons = document.querySelectorAll('.steelframe-products');
-
+            
                     // Adiciona o evento de clique em cada botão
                     productButtons.forEach(button => {
                         button.addEventListener('click', function () {
@@ -308,8 +314,9 @@
                         });
                     });
                 });
-
             </script>
+            
+            
     
             <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="400">Solicitar um orçamento!</button>
         </div>
@@ -364,12 +371,18 @@
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
-                    }
+                    },
+                    autoplay: {
+                        delay: 3000, // Tempo em milissegundos entre cada slide (3 segundos neste caso)
+                        disableOnInteraction: false, // Permite que o autoplay continue mesmo após interação com o swiper
+                        pauseOnMouseEnter: true // Para o autoplay quando o mouse está em cima
+                    },
+                    touchStartPreventDefault: true, // Previne o autoplay ao tocar no carrossel com o dedo
                 });
-
+        
                 // Seleciona todos os botões de produto
                 const productButtons = document.querySelectorAll('.drywall-products');
-
+        
                 // Adiciona o evento de clique em cada botão
                 productButtons.forEach(button => {
                     button.addEventListener('click', function () {
@@ -380,8 +393,8 @@
                     });
                 });
             });
-
         </script>
+        
 
         <script>
             const swiper = new Swiper('.swiper-container', {
