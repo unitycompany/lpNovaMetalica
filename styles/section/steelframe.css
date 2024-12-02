@@ -48,7 +48,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--color--blue)!important; 
+    color: var(--color--dark--blue)!important; 
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -204,6 +204,7 @@
     .swiper-button-prev{
         width: 50px!important;
         height: 50px!important;
+        display: none!important;
     }
 
     .steelframe-text {
