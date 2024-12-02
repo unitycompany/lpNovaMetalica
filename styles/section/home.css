@@ -309,6 +309,7 @@
     .home-left div{
         align-items: center;
         justify-content: center;
+        height: 10vh;
     }
 
     .home-left form div:nth-child(1) input{
@@ -331,10 +332,6 @@
 
     .home-left button{
         padding: 12px;
-    }
-
-    .home-left div{
-        height: 8vh;
     }
 
     .home-left form p{
