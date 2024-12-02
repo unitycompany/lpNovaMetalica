@@ -178,17 +178,17 @@
     z-index: 2;
     background-image: url('../../assets/fundo-home.jpg');
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Comportamento fixo padrão */
     filter: contrast(110%) brightness(110%);
     background-size: cover;
     opacity: .8;
 }
 
-/* Correção para dispositivos móveis */
+/* Remover background-attachment fixo em dispositivos móveis */
 @media (max-width: 768px) {
     .background-home::before {
-        background-attachment: scroll; /* Corrige o problema do fixed no iOS */
-        background-size: auto 100%; /* Ajusta a imagem de fundo para um tamanho adequado */
+        background-attachment: scroll; /* Removendo o 'fixed' em telas pequenas */
+        background-size: cover; /* Mantendo a imagem de fundo cobrindo o contêiner */
     }
 }
 
@@ -203,6 +203,7 @@
     left: 0;
     opacity: .6;
 }
+
 
 
 @keyframes ProductEffect{
