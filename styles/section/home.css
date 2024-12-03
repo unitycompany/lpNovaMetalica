@@ -181,7 +181,7 @@
     background-attachment: fixed; /* Comportamento fixo padrão */
     filter: contrast(110%) brightness(110%);
     background-size: cover;
-    opacity: .8;
+    opacity: .2;
 }
 
 /* Remover background-attachment fixo em dispositivos móveis */
@@ -201,7 +201,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    opacity: .6;
+    opacity: .5;
 }
 
 
