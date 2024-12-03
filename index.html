@@ -361,38 +361,36 @@
                 <div class="swiper-slide"><img src="assets/drywall/AnyConv.com__c14_050.webp" loading="lazy"></div>
                 <div class="swiper-slide"><img src="assets/drywall/AnyConv.com__c14_050.webp" loading="lazy"></div>
             </div>
-            <!-- Botões de navegação -->
+
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
 
         <script>
-            // Certifique-se de que o Swiper foi carregado corretamente
+
             document.addEventListener('DOMContentLoaded', function () {
                 const swiper = new Swiper('.drywall-galery', {
-                    loop: true, // Se necessário, para permitir navegação contínua
+                    loop: true, 
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
                     },
                     autoplay: {
-                        delay: 3000, // Tempo em milissegundos entre cada slide (3 segundos neste caso)
-                        disableOnInteraction: false, // Permite que o autoplay continue mesmo após interação com o swiper
-                        pauseOnMouseEnter: true // Para o autoplay quando o mouse está em cima
+                        delay: 3000, 
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true 
                     },
-                    touchStartPreventDefault: true, // Previne o autoplay ao tocar no carrossel com o dedo
+                    touchStartPreventDefault: true, 
                 });
         
-                // Seleciona todos os botões de produto
                 const productButtons = document.querySelectorAll('.drywall-products');
         
-                // Adiciona o evento de clique em cada botão
                 productButtons.forEach(button => {
                     button.addEventListener('click', function () {
-                        // Pega o índice do slide de destino
+
                         const targetIndex = parseInt(this.getAttribute('data-target'), 10);
-                        // Move o swiper para o slide correspondente, ajustando para o loop
-                        swiper.slideTo(targetIndex + 1); // Adiciona +1 para corresponder ao índice correto dentro do loop
+
+                        swiper.slideTo(targetIndex + 1); 
                     });
                 });
             });
