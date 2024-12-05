@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 100px;
+    gap: 50px;
 }
 
 .qualidade-title{
@@ -223,6 +223,11 @@
 }
 
 @media (min-width: 769px) and (max-width: 1240px){
+
+    .qualidades{
+        gap: 100px;
+    }
+
     .qualidades-card{
         height: 70vh;
     }
