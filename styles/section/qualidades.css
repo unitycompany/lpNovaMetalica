@@ -1,12 +1,18 @@
 .qualidades{
     width: 100%;
     height: auto;
-    padding: 10% 5% 5% 5%;
+    padding: 5% 5% 5% 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 50px;
+}
+
+.qualidade-title{
+    font-size: 2rem;
+    height: 10vh;
+    font-weight: 500;
 }
 
 .qualidades-cards{
@@ -163,7 +169,7 @@
     .qualidades-cards{
         flex-direction: column;
         height: auto;
-        padding: 10% 0;
+        padding: 5% 0;
         gap: 80px;
     }
 
