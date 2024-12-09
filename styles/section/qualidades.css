@@ -7,7 +7,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 50px;
-    border: 1px solid red;
 }
 
 .qualidade-title{
@@ -38,7 +37,6 @@
     border-radius: 10px;
     transition: all .2s ease;
     box-shadow: 0 0 5px #ff5b0080;
-    border: 1px solid red;
 }
 
 .qualidades-card:hover{
