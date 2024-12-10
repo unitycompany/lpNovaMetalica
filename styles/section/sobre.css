@@ -1,12 +1,12 @@
 .sobre{
     height: 70vh;
     width: 100%;
-    padding: 0 5%;
+    padding: 0% 5%;
+    margin: 5% 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    background-color: var(--color--white);
 }
 
 
@@ -27,13 +27,13 @@
 .sobre-left h1{
     font-size: 2rem;
     font-weight: 400;
+    color: var(--color--blue);
 }
 
 .sobre-left p{
-    font-size: 1rem;
+    font-size: .9rem;
     width: 85%;
     font-weight: 400;
-    opacity: .6;
 }
 
 .sobre-left p b{
