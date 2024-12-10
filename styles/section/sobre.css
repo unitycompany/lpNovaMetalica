@@ -36,6 +36,10 @@
     opacity: .6;
 }
 
+.sobre-left p b{
+    font-weight: 500;
+}
+
 .sobre-left button{
     background-color: var(--color--dark--blue);
     color: var(--color--white);
