@@ -137,7 +137,7 @@
 
 .drywall-text button{
     padding: 10px 25px;
-    background-color: var(--color--blue);
+    background-color: var(--color--green);
     color: var(--color--white);
     border-radius: 10px;
     cursor: pointer;

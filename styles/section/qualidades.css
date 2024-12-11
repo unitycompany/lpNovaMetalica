@@ -89,8 +89,8 @@
 
 .qualidades-card-text button{
     padding: 10px 20px;
-    background-color: var(--color--white);
-    color: var(--color--black);
+    background-color: var(--color--green);
+    color: var(--color--white);
     border-radius: 10px;
     cursor: pointer;
     transition: all .2s ease;
@@ -139,8 +139,8 @@
 .qualidades-video-text button{
     border: 1px solid var(--color--white);
     padding: 10px 20px;
-    background-color: var(--color--dark--blue);
     border-radius: 5px;
+    background-color: var(--color--green);
     color: var(--color--white);
     font-weight: 600;
     cursor: pointer;
