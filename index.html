@@ -60,142 +60,168 @@
             <h1 data-aos="fade-up" data-aos-delay="150">Compre Perfis para Steel Frame <b>Direto da Fábrica! </b></h1>
 
 
-            <form id="contactForm" data-aos="fade-up" data-aos-delay="200">
-                <div>
-                    <input type="text" id="name" placeholder="Nome">
-                    <input type="tel" id="tel" placeholder="WhatsApp">
-                </div>
-                <input type="email" id="email" placeholder="E-mail">
-                <div>
-                    <input type="text" id="cidade" placeholder="Cidade">
-                    <input type="text" id="estado" placeholder="Estado">
-                </div>
-                <select>
-                    <option>Qual sua área de atuação?</option>
-                    <option>Arquitetura</option>
-                    <option>Engenharia</option>
-                    <option>Construtura</option>
-                    <option>Logista</option>
-                    <option>Reformas</option>
-                    <option>Outros</option>
-                </select>
-                <button type="submit" id="buttonSubmit">Enviar</button>
+<form id="contactForm" data-aos="fade-up" data-aos-delay="200">
+    <div>
+        <input type="text" id="name" placeholder="Nome" required>
+        <input type="tel" id="tel" placeholder="WhatsApp" required>
+    </div>
+    <input type="email" id="email" placeholder="E-mail" required>
+    <div>
+        <input type="text" id="cidade" placeholder="Cidade" required>
+        <input type="text" id="estado" placeholder="Estado" required>
+    </div>
+    <select id="areaAtuacao" required>
+        <option value="">Qual sua área de atuação?</option>
+        <option>Arquitetura</option>
+        <option>Engenharia</option>
+        <option>Construtora</option>
+        <option>Lojista</option>
+        <option>Reformas</option>
+        <option>Outros</option>
+    </select>
+    <button type="submit" id="buttonSubmit">Enviar</button>
+    <p>*As suas informações serão utilizadas apenas para responder à sua solicitação. Confidencialidade garantida.</p>
+</form>
 
-                <p>*A suas informações serão utilizadas apenas para responder à sua solicitação. Confidencialidade garantida.</p>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const formElement = document.querySelector('#contactForm');
 
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const formElement = document.querySelector('#contactForm');
-                        const submitButton = formElement.querySelector('#buttonSubmit');
-                
-                        formElement.addEventListener('submit', function (event) {
-                            event.preventDefault();
-                
-                            const name = formElement.querySelector('#name').value.trim();
-                            const email = formElement.querySelector('#email').value.trim();
-                            const whatsapp = formElement.querySelector('#tel').value.trim();
-                            const cidade = formElement.querySelector('#cidade').value.trim();
-                            const estado = formElement.querySelector('#estado').value.trim();
-                            const areaAtuacao = formElement.querySelector('select').value;
-                
-                            if (!name || !email || !whatsapp || !cidade || !estado || !areaAtuacao) {
-                                alert("Por favor, preencha todos os campos corretamente.");
-                                return;
-                            }
-                
-                            displayLoadingOverlay(true);
-                
-                            const utms = getUTMs();
-                            const utmSource = utms.utm_source || 'orgânico';
-                            const utmMedium = utms.utm_medium || '';
-                            const utmCampaign = utms.utm_campaign || '';
-                            const utmContent = utms.utm_content || '';
-                            const utmTerm = utms.utm_term || '';
-                            const pageReferrer = window.location.href || 'URL não encontrada';
-                
-                            const payload = {
-                                rules: {
-                                    update: "false",
-                                    filter_status_update: "open",
-                                    equal_pipeline: "true",
-                                    status: "open",
-                                    validate_cpf: "false",
-                                },
-                                leads: [
-                                    {
-                                        id: "form-sistemas-steel-frame-asr",
-                                        user: name,
-                                        email: email,
-                                        name: name,
-                                        personal_phone: whatsapp,
-                                        mobile_phone: whatsapp,
-                                        cidade: cidade,
-                                        estado: estado,
-                                        areaAtuacao: areaAtuacao,
-                                        last_conversion: {
-                                            source: utmSource
-                                        },
-                                        custom_fields: {
-                                            uniqueId: generateUniqueId(),
-                                            utm_source: utmSource,
-                                            utm_medium: utmMedium,
-                                            utm_campaign: utmCampaign,
-                                            utm_content: utmContent,
-                                            utm_term: utmTerm,
-                                            page_referrer: pageReferrer
-                                        }
-                                    }
-                                ]
-                            };
-                
-                            fetch('https://app.pipe.run/webservice/integradorJson?hash=56c50ba8-44e9-42fd-ba51-93207130106f', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(payload)
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Success:', data);
-                                displayLoadingOverlay(false);
-                                alert('Formulário enviado com sucesso!');
-                                formElement.reset();
-                            })
-                            .catch((error) => {
-                                console.error('Error:', error);
-                                displayLoadingOverlay(false);
-                                alert('Houve um erro ao enviar o formulário.');
-                            });
-                        });
-                
-                        function generateUniqueId() {
-                            return new Date().getTime().toString();
-                        }
-                
-                        function getUTMs() {
-                            const urlParams = new URLSearchParams(window.location.search);
-                            return {
-                                utm_source: urlParams.get('utm_source'),
-                                utm_medium: urlParams.get('utm_medium'),
-                                utm_campaign: urlParams.get('utm_campaign'),
-                                utm_content: urlParams.get('utm_content'),
-                                utm_term: urlParams.get('utm_term'),
-                            };
-                        }
-                
-                        function displayLoadingOverlay(show) {
-                            if (show) {
-                                console.log("Mostrando overlay de carregamento...");
-                            } else {
-                                console.log("Removendo overlay de carregamento...");
-                            }
-                        }
-                    });
-                </script>
-                
+    formElement.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-            </form>
+        // 1) Coleta de campos
+        const name         = formElement.querySelector('#name').value.trim();
+        const email        = formElement.querySelector('#email').value.trim();
+        const whatsapp     = formElement.querySelector('#tel').value.trim();
+        const cidade       = formElement.querySelector('#cidade').value.trim();
+        const estado       = formElement.querySelector('#estado').value.trim();
+        const areaAtuacao  = formElement.querySelector('#areaAtuacao').value.trim();
+
+        // 2) Validação básica
+        if (!name || !email || !whatsapp || !cidade || !estado || !areaAtuacao) {
+            alert("Por favor, preencha todos os campos corretamente.");
+            return;
+        }
+
+        // (Opcional) Exibir overlay de carregamento
+        displayLoadingOverlay(true);
+
+        // 3) Coleta de UTMs (se quiser usar)
+        const utms        = getUTMs();
+        const utmSource   = utms.utm_source   || 'orgânico';
+        const utmMedium   = utms.utm_medium   || '';
+        const utmCampaign = utms.utm_campaign || '';
+        const utmContent  = utms.utm_content  || '';
+        const utmTerm     = utms.utm_term     || '';
+        const pageReferrer= window.location.href || 'URL não encontrada';
+
+        // -- Adiciona data/hora atuais
+        const dataAtual = new Date().toLocaleDateString('pt-BR');
+        const horaAtual = new Date().toLocaleTimeString('pt-BR');
+
+        // 4) Montar payload
+        const payload = {
+            rules: {
+                update: "false",
+                filter_status_update: "open",
+                equal_pipeline: "true",
+                status: "open",
+                validate_cpf: "false",
+            },
+            leads: [
+                {
+                    id: "form-sistemas-steel-frame-asr",
+                    user: name,
+                    email: email,
+                    name: name,
+                    personal_phone: whatsapp,
+                    mobile_phone: whatsapp,
+                    cidade: cidade,
+                    estado: estado,
+                    areaAtuacao: areaAtuacao,
+                    last_conversion: {
+                        source: utmSource,
+                        data: dataAtual,
+                        hora: horaAtual
+                    },
+                    custom_fields: {
+                        uniqueId: generateUniqueId(),
+                        utm_source:   utmSource,
+                        utm_medium:   utmMedium,
+                        utm_campaign: utmCampaign,
+                        utm_content:  utmContent,
+                        utm_term:     utmTerm,
+                        page_referrer: pageReferrer
+                    }
+                }
+            ]
+        };
+
+        // 5) Envio ao PipeRun
+        fetch('https://app.pipe.run/webservice/integradorJson?hash=56c50ba8-44e9-42fd-ba51-93207130106f', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (!response.ok) throw new Error(`Erro ao enviar ao PipeRun. Status: ${response.status}`);
+            return response.json();
+        })
+        .then(dataPipeRun => {
+            console.log('Success (PipeRun):', dataPipeRun);
+
+            // 6) Se OK no PipeRun, enviar ao Zapier com no-cors
+            return fetch('https://hooks.zapier.com/hooks/catch/21012702/28ycdy4/', {
+                method: 'POST',
+                mode: 'no-cors', 
+                // IMPORTANTE: Em no-cors, você não pode definir cabeçalhos customizados,
+                // pois isso dispara a preflight request e retorna o erro de CORS.
+                body: JSON.stringify(payload)
+            });
+        })
+        .then(() => {
+            // Como estamos em no-cors, não conseguimos ler o response.json().
+            // Se chegou aqui sem cair no catch, significa que o browser aceitou o envio.
+            // Porém, não garante que o Zapier processou sem erros, pois não temos a resposta.
+            console.log('Success (Zapier) - via no-cors');
+            displayLoadingOverlay(false);
+            alert('Formulário enviado com sucesso!');
+            formElement.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            displayLoadingOverlay(false);
+            alert('Houve um erro ao enviar o formulário.');
+        });
+    });
+
+    // Funções auxiliares
+    function generateUniqueId() {
+        // Gera um ID simples baseado em timestamp
+        return new Date().getTime().toString();
+    }
+
+    function getUTMs() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return {
+            utm_source:   urlParams.get('utm_source'),
+            utm_medium:   urlParams.get('utm_medium'),
+            utm_campaign: urlParams.get('utm_campaign'),
+            utm_content:  urlParams.get('utm_content'),
+            utm_term:     urlParams.get('utm_term'),
+        };
+    }
+
+    function displayLoadingOverlay(show) {
+        if (show) {
+            console.log("Mostrando overlay de carregamento...");
+        } else {
+            console.log("Removendo overlay de carregamento...");
+        }
+    }
+});
+</script>
 
 
         </div>
@@ -238,7 +264,7 @@
 
         <div class="steelframe-text">
             <h1 data-aos="fade-up" data-aos-delay="100"><b>Steel Frame</b></h1>
-            <p data-aos="fade-up" data-aos-delay="150">O Steel Frame é mais do que um método construtivo: é uma revolução na forma de construir. Leve, resistente e sustentável, ele une o que há de melhor em eficiência, qualidade e custo-benefício. 
+            <p data-aos="fade-up" data-aos-delay="150">O Steel Frame é mais do que um método construtivo: é uma revolução na forma de construir. Leve, resistente e sustentável, ele une o que há de melhor em eficiência, qualidade e custo-benefício. <br><br>
                 Com estruturas de aço galvanizado, oferece maior durabilidade e segurança à obra, reduzindo custos de manutenção e logística. Além disso, o Steel Frame permite obras até 4x mais rápidas e projetos personalizados para qualquer segmento.
                 </p>
 
@@ -299,8 +325,8 @@
 
         <div class="drywall-text">
             <h1 data-aos="fade-up" data-aos-delay="100"><b>Drywall</b></h1>
-            <p data-aos="fade-up" data-aos-delay="150">Uma solução inteligente para conforto termoacústico, o Drywall é ideal para divisórias e forros, oferecendo um acabamento de qualidade para atender qualquer projeto. 
-                Os perfis para Drywall são fabricados em aço galvanizado e são, amplamente, utilizados em obras de pequeno a grande porte, como residências, escolas, hospitais, prédios comerciais, entre outros.
+            <p data-aos="fade-up" data-aos-delay="150">Uma solução inteligente para conforto termoacústico, o Drywall é ideal para divisórias e forros, oferecendo um acabamento de qualidade para atender qualquer projeto. <br><br>
+                Os perfis para Drywall são fabricados em aço galvanizado e são, amplamente, utilizados em obras de pequeno a grande porte, como residências, escolas, hospitais e até prédios comerciais, graças à sua versatilidade e eficiência na execução.
                 </p>
     
             <!-- <article onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="200">
@@ -376,9 +402,9 @@
         <div class="sobre-left">
             <img src="./assets/logo-black-nova.png">
             <h1>Conheça a Nova Metálica</h1>
-            <p>Somos a primeira fábrica de perfis para <b>Steel Frame e Drywall do Rio de Janeiro</b>, uma referência em qualidade e tecnologia para o setor da construção civil. <br><br>
-            Com a missão de oferecer <b>perfis metálicos normatizados e fabricados com aço 100% nacional</b>, estamos equipados com tecnologia de ponta, como as avançadas máquinas F325iT FRAMECAD e equipamentos Metalso para Drywall, garantindo precisão, eficiência e agilidade na produção.<br><br>
-            Escolher a Nova Metálica é <b>optar por inovação, custo-benefício e uma parceria que coloca a qualidade em primeiro lugar.</b>
+            <p>Somos a primeira fábrica de perfis para Steel Frame e Drywall do Rio de Janeiro, uma referência em qualidade e tecnologia para o setor da construção civil. <br><br>
+Com a missão de oferecer perfis metálicos normatizados e fabricados com aço 100% nacional, estamos equipados com tecnologia de ponta, como as avançadas máquinas F325iT Framecad para Steel Frame e equipamentos Metalso de última geração para Drywall, garantindo maior precisão, eficiência e agilidade no processo de produção.<br><br>
+Escolher a Nova Metálica é optar por inovação, custo-benefício e uma parceria que coloca a qualidade em primeiro lugar.</b>
             </p>
             <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })">Solicitar orçamento agora!</button>
         </div>
@@ -391,10 +417,10 @@
 
         <div class="diferencas2-stick" data-aos="fade-up" data-aos-delay="50">
             <h1 data-aos="fade-up" data-aos-delay="150">Perfis Stick</h1>
-            <p data-aos="fade-up" data-aos-delay="200">São fabricados em tamanhos padrão (de 3 a 6m) e demandam ajustes no próprio local de construção, como cortes e furos. Eles são a opção mais tradicional, com flexibilidade para serem ajustados conforme necessário no momento da montagem.
+            <p data-aos="fade-up" data-aos-delay="200">São fabricados em tamanhos padrão (de 3 a 6m) e demandam ajustes no local da obra, como cortes e furos, o que aumenta o tempo e a complexidade da montagem, mesmo sendo a opção mais tradicional.
             </p>
             <div data-aos="fade-up" data-aos-delay="250"></div>
-            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="300">Fazer meu orçamento agora!</button>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })">Fazer meu orçamento agora!</button>
         </div>
 
         <div class="diferencas2-engenheirado" data-aos="fade-up" data-aos-delay="50">
@@ -403,7 +429,7 @@
             <h1 data-aos="fade-up" data-aos-delay="200">Perfis Engenheirado</h1>
             <p data-aos="fade-up" data-aos-delay="300">São fabricados sob medida para cada obra, sendo pré-cortados e pré-perfurados antes de chegar ao local de obra, o que facilita a construção e reduz o tempo de montagem.</p>
 
-            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })" data-aos="fade-up" data-aos-delay="400">Fazer meu orçamento agora!</button>
+            <button onclick="document.querySelector('#home').scrollIntoView({ behavior: 'smooth' })">Fazer meu orçamento agora!</button>
         </div>
 
         <div class="custom-shape-divider-top-1733145735">
@@ -505,7 +531,7 @@
         <div class="qualidades-video">
             <div class="qualidades-video-text">
                 <h2 data-aos="fade-up" data-aos-delay="100">Como fabricamos nossos perfis</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Nossos perfis são fabricados com aço 100% nacional, fornecido por parceiros de renome como ArcelorMittal e CSN Siderúrgica, garantindo qualidade e rastreabilidade, pois todo aço fornecido tem um certificado da usina com o ensaio técnico do lote.<br><br>
+                <p data-aos="fade-up" data-aos-delay="200">Nossos perfis são fabricados com aço 100% nacional, fornecido por parceiros de renome como  CSN Siderúrgica e ArcelorMittal, garantindo qualidade e rastreabilidade, pois todo aço fornecido tem um certificado da usina com o ensaio técnico do lote.<br><br>
                 Com tecnologia de ponta, utilizamos equipamentos avançados, como a máquina F325iT FRAMECAD, que possibilita cortes precisos e personalizados, tornando o nosso processo produtivo mais eficiente e versátil.<br><br>
                 Para fabricação de perfis para Drywall, contamos com maquinário Metalso de última geração, assegurando maior qualidade em todos os perfis produzidos.
                 </p>
